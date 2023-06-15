@@ -2,8 +2,8 @@ import data from "@/app/data";
 import { notFound } from "next/navigation";
 
 export default function Page({ params }) {
-  const { slug = [] } = params;
-  const uri = "/" + slug.join("/");
+  const { path = [] } = params;
+  const uri = "/" + path.join("/");
   const page = data.find((page) => page.uri === uri);
 
   if (!page) {
